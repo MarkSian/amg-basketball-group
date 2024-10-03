@@ -31,7 +31,7 @@ document.getElementById('confirmAdd').addEventListener('click', function () {
     //store player in local storage
     let Players = JSON.parse(localStorage.getItem('players')) || [];
     Players.push(player);
-    localStorage.setItem('players', JSON.stringify(players));
+    localStorage.setItem('players', JSON.stringify(Players));
 
     //hide confirmation modal
     document.getElementById('confirmationModal').style.display = 'none';
