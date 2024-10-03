@@ -5,13 +5,13 @@ const confirmButton = document.getElementById('confirmButton');
 const cancelButton = document.getElementById('cancelButton');
 
 //Logic to grab form data and store into local storage
-document.getElementById('playerForm').addEventListener('submit', function(event){
+document.getElementById('playerForm').addEventListener('submit', function (event) {
     event.preventDefault();
     //show confirmation modal
-    document.getElementById('confirmationModal').style.display = 'block';   
+    document.getElementById('confirmationModal').style.display = 'block';
 });
 
-document.getElementById('confirmAdd').addEventListener('click', function() {
+document.getElementById('confirmAdd').addEventListener('click', function () {
     //get player data from the form
     const playerName = document.getElementById('playerName').value;
     const playerSalary = parseFloat(document.getElementById('playerSalary').value) || 0;
@@ -31,7 +31,7 @@ document.getElementById('confirmAdd').addEventListener('click', function() {
     //store player in local storage
     let Players = JSON.parse(localStorage.getItem('players')) || [];
     Players.push(player);
-    localStorage.setItem('players',JSON.stringify('players'));
+    localStorage.setItem('players', JSON.stringify(players));
 
     //hide confirmation modal
     document.getElementById('confirmationModal').style.display = 'none';
@@ -40,7 +40,7 @@ document.getElementById('confirmAdd').addEventListener('click', function() {
     displayplayers();
 });
 
-document.getElementById('cancelAdd').addEventListener('click', function() {
+document.getElementById('cancelAdd').addEventListener('click', function () {
     //hide confirmation modal
     document.getElementById('confirmationModal').style.display = 'none';
 });
@@ -48,7 +48,7 @@ document.getElementById('cancelAdd').addEventListener('click', function() {
 function displayplayers() {
     const players = JSON.parse(localStorage.getItem('players')) || [];
     const playerTableBody = document.getElementById('playerTable').getElementsByTagName('tbody')[0];
-    
+
     //clear rows
     playerTableBody.innerHTML = '';
 
