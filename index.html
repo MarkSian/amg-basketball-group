@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title></title>
-  <link rel="stylesheet" href="./assets/CSS/style.css" />
-  <script defer src="/assets/JS/script.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="../amg-basketball-group/assets/CSS/style.css" />
+  <script defer src="../amg-basketball-group/assets/JS/script.js" type="text/javascript"></script>
 
 </head>
 
@@ -31,12 +31,35 @@
       <div class="banner-area">
         <img src="./assets/images/trophy.jpg" alt="trophy-banner" class="overlay-image">
       </div>
-
       </div>
       </div>
     </section>
-
-
+    <form id="playerForm">
+      <input type="text" id="playerName" placeholder="Player Name" required>
+      <input type="number" id="playerSalary" placeholder="Player Salary" required>
+      <input type="number" id="yearsOnTeam" placeholder="Years on Team" required>
+      <input type="text" id="position" placeholder="Positon" required>
+      <input type="text" id="roll" placeholder="Roll" required>
+      <button type="submit">Add Player</button>
+    </form>
+    <div id="confirmationModal" style="display:none;">
+      <p>Are you sure you want to add this player?</p>
+      <button id="confirmAdd">Yes</button>
+      <button id="cancelAdd">No</button>
+    </div>
+    <table id="playerTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Salary</th>
+          <th>Years on Team</th>
+          <th>Positon</th>
+          <th>Roll</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
   </main>
 
 </body>
