@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+    text-align: center;
+    background-color: rgb(37, 36, 36);
+
+}
+
+.wrapper {
+    width: 90%;
+    margin: 0 auto;
+
+}
+
+header {
+    width: 100%;
+    height: 100px;
+    background-color: #032e52;
+
+
+}
+
+.logo {
+    width: 40%;
+    float: left;
+    text-align: left;
+    line-height: 100px;
+
+}
+
+.logo a {
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: 30px;
+    color: gold;
+    letter-spacing: 4px;
+    -webkit-text-stroke: 0.5px red;
+}
+
+nav {
+    float: right;
+    line-height: 100px;
+}
+
+nav a {
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-size: 20px;
+    color: yellow;
+    padding: 37px 20px;
+    margin: 0 1px;
+    font-weight: 600;
+    -webkit-text-stroke: 0.5px red;
+}
+
+nav a:hover {
+    color: red;
+    -webkit-text-stroke: 0.5px goldenrod;
+
+}
+
+.banner-area {
+    background-image: url(../images/banner.jpg);
+    background-position: center;
+    position: relative;
+    width: 100%;
+    height: 145px;
+}
+
+.overlay-image {
+    position: absolute;
+    left: 50px;
+    height: 125px;
+    border-radius: 60px;
+    border: 2px goldenrod solid;
+}
