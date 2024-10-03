@@ -1,76 +1,68 @@
-//Logic to grab form data and store into local storage
-const form = document.getElementById('myForm');
+//global variables
 const modal = document.getElementById('confirmationModal');
-const closeBtn = document.querySelector('.close');
+const closeBtn = document.querySelector('.clsoe');
 const confirmButton = document.getElementById('confirmButton');
 const cancelButton = document.getElementById('cancelButton');
-const table = document.getElementById('playerTable');
 
-
-form.addEventListener('submit', function(event) {
+//Logic to grab form data and store into local storage
+document.getElementById('playerForm').addEventListener('submit', function(event){
     event.preventDefault();
-
-    const playerName = document.getElementById('playerName').value;
-    const playerSalary = document.getElementById('playerSalary').value;
-    const yearsOnTeam = document.getElementById('yearsOnTeam').value;
-    const position = document.getElementById('postiton').value;
-    const roll = document.getElementById('roll').value;
-
-    const playerInfo = {
-        playerName:playerName,
-        playerSalary:playerSalary,
-        yearsOnTeam:yearsOnTeam,
-        position:position,
-        roll:roll,
-    };
-
-    const teamInfo = JSON.parse(localStorage.getItem('playerInfo')) || [];
-    teamInfo.push(playerInfo);
-    localStorage.setItem('teamInfo', JSON.stringify(teamInfo));
-    modal.style.display = 'block';
+    //show confirmation modal
+    document.getElementById('confirmationModal').style.display = 'block';   
 });
 
-//close modal when the close button is clicked
-closeBtn.onclick = function(){
-    modal.style.display = 'none';
-};
+document.getElementById('confirmAdd').addEventListener('click', function() {
+    //get player data from the form
+    const playerName = document.getElementById('playerName').value;
+    const playerSalary = parseFloat(document.getElementById('playerSalary').value) || 0;
+    const yearsOnTeam = parseInt(document.getElementById('yearsOnTeam').value) || 0;
+    const position = document.getElementById('position').value;
+    const roll = document.getElementById('roll').value;
 
-//handle confirmation
-confirmButton.onclick = function() {
-    //store player data to the local storage
-    localStorage.setItem();
-    //clear input field after submission
-    document.getElementById('teamInfo').value='';
-    //close modal
-    modal.style.display = 'none';
-};
+    //create player object
+    const player = {
+        name: playerName,
+        salary: playerSalary,
+        yearsOnTeam: yearsOnTeam,
+        position: position,
+        roll: roll,
+    };
 
-//Handle cancellation
-cancelButton.onclick = function() {
-    modal.style.display = 'none';
-};
+    //store player in local storage
+    let Players = JSON.parse(localStorage.getItem('players')) || [];
+    Players.push(player);
+    localStorage.setItem('players',JSON.stringify('players'));
+
+    //hide confirmation modal
+    document.getElementById('confirmationModal').style.display = 'none';
+
+    //display players
+    displayplayers();
+});
+
+document.getElementById('cancelAdd').addEventListener('click', function() {
+    //hide confirmation modal
+    document.getElementById('confirmationModal').style.display = 'none';
+});
 //grab from local storage and display on table
 function displayplayers() {
-    const storedPlayers = JSON.parse(localStorage.getItem('teamInfo')) || [];
-    const tbody = document.getElementById('playerTable').getElementsByTagName('tbody')[0];
-    //clear existing rows
-    tbody.innerHTML = '';
-    //populate table with stored data
-    storedPlayers.forEach(Data => {
-        const row = tbody.insertRow();
-        const cell1 = row.insertCell(0);
-        const cell2 = row.insertCell(1);
-        const cell3 = row.insertCell(2);
-        const cell4 = row.insertCell(3);
-        const cell5 = row.insertCell(4);
-        cell1.textContent = data.playerName;
-        cell2.textContent = data.playerSalary;
-        cell3.textContent = data.yearsOnTeam;
-        cell4.textContent = data.position;
-        cell5.textContent = data.roll;
+    const players = JSON.parse(localStorage.getItem('players')) || [];
+    const playerTableBody = document.getElementById('playerTable').getElementsByTagName('tbody')[0];
+    
+    //clear rows
+    playerTableBody.innerHTML = '';
+
+    //populate table
+    players.forEach(player => {
+        const row = playerTableBody.insertRow();
+        row.insertCell(0).textContent = player.name;
+        row.insertCell(1).textContent = player.salary;
+        row.insertCell(2).textContent = player.yearsOnTeam;
+        row.insertCell(3).textContent = player.position;
+        row.insertCell(4).textContent = player.role;
     });
 }
-window.onload = displayplayers;
+displayplayers();
 
 
 
