@@ -17,7 +17,7 @@ document.getElementById('confirmAdd').addEventListener('click', function () {
     const playerSalary = parseFloat(document.getElementById('playerSalary').value) || 0;
     const yearsOnTeam = parseInt(document.getElementById('yearsOnTeam').value) || 0;
     const position = document.getElementById('position').value;
-    const roll = document.getElementById('roll').value;
+    const role = document.getElementById('role').value;
 
     //create player object
     const player = {
@@ -25,7 +25,7 @@ document.getElementById('confirmAdd').addEventListener('click', function () {
         salary: playerSalary,
         yearsOnTeam: yearsOnTeam,
         position: position,
-        roll: roll,
+        role: role,
     };
 
     //store player in local storage
@@ -36,13 +36,16 @@ document.getElementById('confirmAdd').addEventListener('click', function () {
     //hide confirmation modal
     document.getElementById('confirmationModal').style.display = 'none';
 
+
     //display players
     displayplayers();
+
 });
 
 document.getElementById('cancelAdd').addEventListener('click', function () {
     //hide confirmation modal
     document.getElementById('confirmationModal').style.display = 'none';
+
 });
 //grab from local storage and display on table
 function displayplayers() {
