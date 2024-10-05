@@ -6,8 +6,12 @@
 
 body {
     text-align: center;
-    background-color: rgb(37, 36, 36);
+    background-color: rgb(37, 36, 36) !important;
 
+}
+
+.box-area {
+    background-color: rgb(37, 36, 36);
 }
 
 .wrapper {
@@ -20,7 +24,12 @@ header {
     width: 100%;
     height: 100px;
     background-color: #032e52;
-
+    top: 0px;
+    left: 0px;
+    position: relative;
+    border-style: groove;
+    border-width: 7px;
+    border-color: rgb(139, 35, 50);
 }
 
 .logo {
@@ -86,7 +95,7 @@ nav a:hover {
     color: white;
     background-color: #032e52;
     border-radius: 10px;
-
+    box-shadow: 0px 0 5px 5px rgb(71, 70, 70);
 
 }
 
