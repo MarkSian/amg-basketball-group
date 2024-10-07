@@ -19,58 +19,54 @@
 </head>
 
 <body>
+  <header>
+    <div class="wrapper">
+      <div class="logo">
+        <a href="#">Denver Nuggets</a>
+      </div>
+      <nav>
+        <a href="https://www.nba.com/nuggets/">Home</a>
+        <a href="https://www.espn.com/nba/">ESPN</a>
+        <a href="https://www.basketball-reference.com/">Basketball Reference</a>
+        <a href="https://basketball.realgm.com/nba/news">Rumor Mill</a>
+      </nav>
+    </div>
+  </header>
   <main>
-    <section class="box-area">
-      <header>
-        <div class="wrapper">
-          <div class="logo">
-            <a href="#">Denver Nuggets</a>
-          </div>
-          <nav>
-            <a href="https://www.nba.com/nuggets/">Home</a>
-            <a href="https://www.espn.com/nba/">ESPN</a>
-            <a href="https://www.basketball-reference.com/">Basketball Reference</a>
-            <a href="https://basketball.realgm.com/nba/news">Rumor Mill</a>
-          </nav>
-        </div>
-      </header>
-
-      <div class="banner-area">
-        <img src="./assets/images/trophy.jpg" alt="trophy-banner" class="overlay-image">
-      </div>
-      </div>
-      </div>
-
-      <form id="playerForm">
-        <h2>Add Players Here</h2>
-        <input type="text" id="playerName" placeholder="Player Name" required>
-        <input type="number" id="playerSalary" placeholder="Player Salary" required>
-        <input type="number" id="yearsOnTeam" placeholder="Years on Team" required>
-        <input type="text" id="position" placeholder="Positon" required>
-        <input type="text" id="role" placeholder="Starter/Bench" required>
-        <button type="submit">Add Player</button>
-      </form>
-      <div id="confirmationModal" style="display:none;">
+    <div class="banner-area">
+    </div>
+    <form id="playerForm">
+      <h2>Add Players Here</h2>
+      <input type="text" id="playerName" placeholder="Player Name" required>
+      <input type="number" id="playerSalary" placeholder="Player Salary" required>
+      <input type="number" id="yearsOnTeam" placeholder="Years on Team" required>
+      <input type="text" id="position" placeholder="Positon" required>
+      <input type="text" id="role" placeholder="Starter/Bench" required>
+      <button type="submit">Add Player</button>
+    </form>
+    <div id="confirmationModal">
+      <div class="modal-box">
         <p>Are you sure you want to add this player?</p>
         <button id="confirmAdd">Yes</button>
         <button id="cancelAdd">No</button>
       </div>
-      <div class="wrapper">
-        <table id="playerTable">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Salary (USD)</th>
-              <th>Years on Team</th>
-              <th>Positon</th>
-              <th>Role</th>
-            </tr>
-          </thead>
-          <tbody>
-          </tbody>
-        </table>
-      </div>
-    </section>
+    </div>
+    <div class="wrapper">
+      <table id="playerTable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Salary (USD)</th>
+            <th>Years on Team</th>
+            <th>Positon</th>
+            <th>Role</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+
   </main>
 
 

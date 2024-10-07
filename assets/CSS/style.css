@@ -10,9 +10,6 @@ body {
 
 }
 
-.box-area {
-    background-color: rgb(37, 36, 36);
-}
 
 .wrapper {
     width: 90%;
@@ -137,16 +134,76 @@ form h2 {
 }
 
 #confirmationModal {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 200px;
-    bottom: 410px;
-    margin: 12px 0px 0px 10px;
-    background-color: #032e52;
-    border: 5px rgb(139, 35, 50) solid;
-    padding: 5px 5px;
-    border-radius: 10px;
+    display: none;
     position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
     color: gold;
+}
+
+.modal-box {
+    border: 5px red solid;
+    text-align: center;
+    border: 5px rgb(139, 35, 50) solid;
+    background-color: #032e52;
+    top: 40%;
+    left: 43%;
+    width: fit-content;
+    position: fixed;
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        text-align: center;
+        /* Center the header content */
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        padding: 10px 0;
+
+        font-size: 15px;
+    }
+
+    form {
+        margin: 10px 0;
+        position: relative;
+        left: 250px;
+        top: 25%;
+    }
+
+
+    form input {
+        padding: 8px;
+    }
+
+    table {
+        font-size: 14px;
+        position: relative;
+        top: 500px;
+    }
+
+    .logo a {
+        font-size: 15px;
+    }
+
+    .modal-box {
+        position: fixed;
+        top: 20%;
+        left: 27%;
+    }
+
+
 }
